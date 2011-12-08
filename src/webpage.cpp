@@ -153,6 +153,11 @@ QWebFrame *WebPage::mainFrame()
     return m_mainFrame;
 }
 
+QString WebPage::url() const
+{
+    return m_mainFrame->url().toString();
+}
+
 QString WebPage::content() const
 {
     return m_mainFrame->toHtml();

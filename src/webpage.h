@@ -43,6 +43,7 @@ class Phantom;
 class WebPage: public QObject
 {
     Q_OBJECT
+    Q_PROPERTY(QString url READ url)
     Q_PROPERTY(QString content READ content WRITE setContent)
     Q_PROPERTY(QString libraryPath READ libraryPath WRITE setLibraryPath)
     Q_PROPERTY(QVariantMap viewportSize READ viewportSize WRITE setViewportSize)
@@ -54,6 +55,8 @@ public:
     WebPage(QObject *parent, const Config *config);
 
     QWebFrame *mainFrame();
+
+    QString url() const;
 
     QString content() const;
     void setContent(const QString &content);
